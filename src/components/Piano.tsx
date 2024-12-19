@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native';
 import { Audio } from 'expo-av';
-import soundMap from '../assets/sounds'; // Asegúrate de que sounds.ts esté configurado correctamente
+import soundMap from '../assets/sounds'; 
 
-// Notas disponibles (blancas)
+
 const notes = [
   { note: 'do', label: 'DO' },
   { note: 're', label: 'RE' },
@@ -14,18 +14,17 @@ const notes = [
   { note: 'si', label: 'SI' },
 ];
 
-// Posiciones relativas de las teclas negras
 const blackKeyPositions = [
-  0, // do#
-  1, // re#
-  null, // No hay tecla negra entre mi y fa
-  3, // fa#
-  4, // sol#
-  5, // la#
+  0, 
+  1, 
+  null, 
+  3, 
+  4, 
+  5, 
 ];
 
 const Piano = () => {
-  // Función para reproducir el sonido de las teclas blancas
+
   const playNote = async (note: string) => {
     try {
       const soundFile = soundMap[note];
@@ -65,11 +64,11 @@ const Piano = () => {
               key={index}
               style={[
                 styles.blackKey,
-                { top: `${position * 14.28 + 7}%` }, // Posición vertical de las teclas negras
+                { top: `${position * 14.28 + 7}%` }, 
               ]}
             />
           ) : (
-            <View key={index} style={{ height: '14.28%' }} /> // Espacio para teclas negras faltantes
+            <View key={index} style={{ height: '14.28%' }} /> 
           )
         )}
       </View>
@@ -79,9 +78,9 @@ const Piano = () => {
 
 const styles = StyleSheet.create({
   pianoContainer: {
-    width: Dimensions.get('window').width * 0.5, // Más estrecho para orientación vertical
-    height: Dimensions.get('window').height * 0.8, // Abarca la mayor parte del alto
-    flexDirection: 'row', // Organiza teclas blancas y negras en columnas
+    width: Dimensions.get('window').width * 0.5, 
+    height: Dimensions.get('window').height * 0.8,
+    flexDirection: 'row', 
     backgroundColor: '#f5f5f5',
     marginVertical: 20,
     position: 'relative',
@@ -97,17 +96,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#000',
     justifyContent: 'flex-end',
-    alignItems: 'flex-start', // Alinea el texto a la izquierda
+    alignItems: 'flex-start', 
     backgroundColor: '#fff',
-    paddingHorizontal: 5, // Espaciado para texto
+    paddingHorizontal: 5, 
   },
   labelContainer: {
     position: 'absolute',
-    bottom: 5, // Coloca el texto cerca del borde inferior
-    left: 10, // Alinea el texto más a la izquierda
+    bottom: 5, 
+    left: 10, 
   },
   noteLabel: {
-    fontSize: Dimensions.get('window').width * 0.04, // Texto proporcional al ancho
+    fontSize: Dimensions.get('window').width * 0.04, 
     fontWeight: 'bold',
     color: '#000',
   },
@@ -117,12 +116,12 @@ const styles = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     zIndex: 2,
-    left: '50%', // Coloca las teclas negras en la derecha
+    left: '50%', 
   },
   blackKey: {
     position: 'absolute',
     width: '100%',
-    height: '10%', // Tamaño proporcional de las teclas negras
+    height: '10%', 
     backgroundColor: '#000',
     borderRadius: 3,
   },

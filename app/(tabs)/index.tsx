@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
-import Piano from '../../src/components/Piano'; // Ajuste de la ruta
+import Piano from '../../src/components/Piano'; 
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#D2B48C',
   },
   title: {
     fontSize: 24,
