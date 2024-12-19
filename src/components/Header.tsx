@@ -1,29 +1,25 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-interface HeaderProps {
-  title: string;
-}
-
-export default function Header({ title }: HeaderProps) {
+const Header: React.FC = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.text}>Piano-VI</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   header: {
-    padding: 10,
-    backgroundColor: '#007acc',
-    borderRadius: 8,
-    marginBottom: 20,
+    backgroundColor: '#6200ee',
+    padding: 15,
+    alignItems: 'center',
   },
-  title: {
+  text: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
+
+export default Header;

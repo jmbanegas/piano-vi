@@ -1,33 +1,31 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import PianoKey from '../../src/components/PianoKey';
+import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
+import Piano from '../../src/components/Piano'; // Ajuste de la ruta
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.piano}>
-        <PianoKey note="C" soundFile="do.mp3" color="#fff" />
-        <PianoKey note="D" soundFile="re.mp3" color="#fff" />
-        <PianoKey note="E" soundFile="mi.mp3" color="#fff" />
-        <PianoKey note="F" soundFile="fa.mp3" color="#fff" />
-        <PianoKey note="G" soundFile="sol.mp3" color="#fff" />
-        <PianoKey note="A" soundFile="la.mp3" color="#fff" />
-        <PianoKey note="B" soundFile="si.mp3" color="#fff" />
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>¡Bienvenido a Piano-VI!</Text>
+        <Piano />
       </View>
-    </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333',
+    backgroundColor: '#f5f5f5',
   },
-  piano: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center',
   },
 });
+
+export default App;
